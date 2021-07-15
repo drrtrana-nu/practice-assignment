@@ -1,0 +1,16 @@
+name: GitHub Classroom Workflow
+
+    on: [push]
+
+    jobs:
+      build:
+        name: Autograding
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v2
+          - name: Set up Python 3.8.5
+            uses: actions/setup-python@v2
+            with:
+              # Semantic version range syntax or exact version of a Python version
+              python-version: '3.8.5'
+          - uses: education/autograding@v1
